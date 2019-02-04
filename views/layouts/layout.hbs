@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Simple planning tool</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="/assets/style.css" />
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-sm" style="background-color:#2db300">
+    <a href="/" class="navbar-brand" style="color:#ffffff;">Simple planning tool</a>
+    {{#if user}}
+      <a href="/plans" class="navbar-brand" style="color:#ffffff;">Home</a>
+      <a href="/logout" class="btn btn-warning pull-right">Logout</a>
+    {{/if}}
+  </nav>
+  <div class="container">
+    <hr> {{{body}}}
+  </div>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+  $(function() {
+    //Open modal
+    $('[data-popup-open]').on('click', function(e)  {
+      let targeted_popup_class = jQuery(this).attr('data-popup-open');
+      $('[data-popup="' + targeted_popup_class + '"]').fadeIn(350);
+      e.preventDefault();
+    });
+    //Close modal
+    $('[data-popup-close]').on('click', function(e)  {
+      let targeted_popup_class = jQuery(this).attr('data-popup-close');
+      $('[data-popup="' + targeted_popup_class + '"]').fadeOut(350);
+      e.preventDefault();
+    });
+  });
+</script>

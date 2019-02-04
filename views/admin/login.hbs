@@ -1,0 +1,12 @@
+<h1>Admin</h1>
+<form action="/admin" method="POST">
+  <div class="container">
+    <label for="email"><b>Email</b></label><br>
+    <input type="text" class="form-control" placeholder="Enter Email" name="email" required><br>
+    <label for="psw"><b>Password</b></label><br>
+    <input type="password" class="form-control" placeholder="Enter Password" name="password" required>
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+    <div class="clearfix">
+      <input type="submit" class="cancelbtn" value="Submit">
+    </div>
+</form>

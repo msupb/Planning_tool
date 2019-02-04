@@ -1,0 +1,27 @@
+{{#data}}
+  <h1>{{email}}</h1>
+  <p>First name: {{first_name}}</p>
+  <p>Last name: {{last_name}}</p>
+  <p>Permissions: {{role}}</p>
+{{/data}}
+<h2>Plans</h2>
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <td>Plan</td>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each plans}}
+      <tr>
+        <td>
+          <a href="/plans/{{ id }}">{{ plan_name }}
+          <form action="/plans/delete/{{ id }}?_method=DELETE" method="POST">
+              <input type="hidden" name="_csrf" value="{{csrfToken}}">
+              <input type="submit" class="btn btn-danger pull-right" value="Delete">
+          </form>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

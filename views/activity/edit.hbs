@@ -1,0 +1,16 @@
+<h1>Edit activity</h1>
+{{#dataEdit}}
+<form action="/activity/update/{{id}}?_method=PUT" method="POST">
+  <div class="form-group">
+    <label>Activity</label>
+    <input type="text" class="form-control" name="activity_name" value="{{activity_name}}" placeholder="{{activity_name}}">
+  </div>
+  <div class="form-group">
+    <label>Description</label>
+    <input type="text" class="form-control" name="comment" value="{{comment}}" placeholder="{{comment}}">
+  </div>
+  <input type="hidden" name="plans_id" value="{{plans_id}}">
+  {{/dataEdit}}
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+    <input type="submit" class="btn btn-success" value="Submit">
+</form>
